@@ -2,8 +2,8 @@ use std::net::UdpSocket;
 use std::io;
 
 fn main() {
-    let server = UdpSocket::bind("192.168.7.1:8080").expect("Could not connect to server socket.");
-    println!("Listening on {}", server.local_addr().unwrap());
+    let server = UdpSocket::bind("192.168.7.1:8080").unwrap();
+    println!("Sending on {}", server.local_addr().unwrap());
     loop {
         let mut msg = String::new();
         println!("Enter a message: ");
